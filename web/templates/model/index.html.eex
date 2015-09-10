@@ -1,0 +1,30 @@
+<h2>Listing models</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Model</th>
+      <th>Brand</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for model <- @models do %>
+    <tr>
+      <td><%= model.model_id %></td>
+      <td><%= model.model %></td>
+      <td><%= model.brand_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: model_path(@conn, :show, model), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: model_path(@conn, :edit, model), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: model_path(@conn, :delete, model), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New model", to: model_path(@conn, :new) %>

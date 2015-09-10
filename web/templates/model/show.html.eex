@@ -1,0 +1,23 @@
+<h2>Show model</h2>
+
+<ul>
+
+  <li>
+    <strong>Model:</strong>
+    <%= @model.model_id %>
+  </li>
+
+  <li>
+    <strong>Model:</strong>
+    <%= @model.model %>
+  </li>
+
+  <li>
+    <strong>Brand:</strong>
+    <%= @model.brand_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: model_path(@conn, :edit, @model) %>
+<%= link "Back", to: model_path(@conn, :index) %>

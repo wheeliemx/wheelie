@@ -1,0 +1,28 @@
+<h2>Show state</h2>
+
+<ul>
+
+  <li>
+    <strong>State:</strong>
+    <%= @state.state_id %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @state.state %>
+  </li>
+
+  <li>
+    <strong>State prefix:</strong>
+    <%= @state.state_prefix %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @state.country_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: state_path(@conn, :edit, @state) %>
+<%= link "Back", to: state_path(@conn, :index) %>

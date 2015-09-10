@@ -1,0 +1,18 @@
+<h2>Show service</h2>
+
+<ul>
+
+  <li>
+    <strong>Service:</strong>
+    <%= @service.service_id %>
+  </li>
+
+  <li>
+    <strong>Service:</strong>
+    <%= @service.service %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: service_path(@conn, :edit, @service) %>
+<%= link "Back", to: service_path(@conn, :index) %>

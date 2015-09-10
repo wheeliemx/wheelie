@@ -1,0 +1,33 @@
+<h2>Show mechanic</h2>
+
+<ul>
+
+  <li>
+    <strong>Mechanic:</strong>
+    <%= @mechanic.mechanic_id %>
+  </li>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @mechanic.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @mechanic.last_name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @mechanic.email %>
+  </li>
+
+  <li>
+    <strong>License:</strong>
+    <%= @mechanic.license_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: mechanic_path(@conn, :edit, @mechanic) %>
+<%= link "Back", to: mechanic_path(@conn, :index) %>

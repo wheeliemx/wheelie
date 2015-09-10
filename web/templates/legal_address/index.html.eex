@@ -1,0 +1,44 @@
+<h2>Listing legal adresses</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Legal address</th>
+      <th>Street</th>
+      <th>External number</th>
+      <th>Internal number</th>
+      <th>Neighborhood</th>
+      <th>Locality</th>
+      <th>Zip code</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for legal_address <- @legal_adresses do %>
+    <tr>
+      <td><%= legal_address.legal_address_id %></td>
+      <td><%= legal_address.street %></td>
+      <td><%= legal_address.external_number %></td>
+      <td><%= legal_address.internal_number %></td>
+      <td><%= legal_address.neighborhood %></td>
+      <td><%= legal_address.locality %></td>
+      <td><%= legal_address.zip_code %></td>
+      <td><%= legal_address.city_id %></td>
+      <td><%= legal_address.state_id %></td>
+      <td><%= legal_address.country_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: legal_address_path(@conn, :show, legal_address), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: legal_address_path(@conn, :edit, legal_address), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: legal_address_path(@conn, :delete, legal_address), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New legal address", to: legal_address_path(@conn, :new) %>

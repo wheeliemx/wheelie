@@ -1,0 +1,48 @@
+<h2>Show car</h2>
+
+<ul>
+
+  <li>
+    <strong>Car:</strong>
+    <%= @car.car_id %>
+  </li>
+
+  <li>
+    <strong>Year:</strong>
+    <%= @car.year %>
+  </li>
+
+  <li>
+    <strong>Alternative brand name:</strong>
+    <%= @car.alternative_brand_name %>
+  </li>
+
+  <li>
+    <strong>Alternative model name:</strong>
+    <%= @car.alternative_model_name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @car.description %>
+  </li>
+
+  <li>
+    <strong>User:</strong>
+    <%= @car.user_id %>
+  </li>
+
+  <li>
+    <strong>Model:</strong>
+    <%= @car.model_id %>
+  </li>
+
+  <li>
+    <strong>Brand:</strong>
+    <%= @car.brand_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: car_path(@conn, :edit, @car) %>
+<%= link "Back", to: car_path(@conn, :index) %>

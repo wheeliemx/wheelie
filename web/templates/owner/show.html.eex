@@ -1,0 +1,38 @@
+<h2>Show owner</h2>
+
+<ul>
+
+  <li>
+    <strong>Owner:</strong>
+    <%= @owner.owner_id %>
+  </li>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @owner.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @owner.last_name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @owner.email %>
+  </li>
+
+  <li>
+    <strong>Legal address:</strong>
+    <%= @owner.legal_address_id %>
+  </li>
+
+  <li>
+    <strong>License:</strong>
+    <%= @owner.license_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: owner_path(@conn, :edit, @owner) %>
+<%= link "Back", to: owner_path(@conn, :index) %>

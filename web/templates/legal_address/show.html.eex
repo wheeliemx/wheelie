@@ -1,0 +1,58 @@
+<h2>Show legal address</h2>
+
+<ul>
+
+  <li>
+    <strong>Legal address:</strong>
+    <%= @legal_address.legal_address_id %>
+  </li>
+
+  <li>
+    <strong>Street:</strong>
+    <%= @legal_address.street %>
+  </li>
+
+  <li>
+    <strong>External number:</strong>
+    <%= @legal_address.external_number %>
+  </li>
+
+  <li>
+    <strong>Internal number:</strong>
+    <%= @legal_address.internal_number %>
+  </li>
+
+  <li>
+    <strong>Neighborhood:</strong>
+    <%= @legal_address.neighborhood %>
+  </li>
+
+  <li>
+    <strong>Locality:</strong>
+    <%= @legal_address.locality %>
+  </li>
+
+  <li>
+    <strong>Zip code:</strong>
+    <%= @legal_address.zip_code %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @legal_address.city_id %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @legal_address.state_id %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @legal_address.country_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: legal_address_path(@conn, :edit, @legal_address) %>
+<%= link "Back", to: legal_address_path(@conn, :index) %>

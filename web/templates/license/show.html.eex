@@ -1,0 +1,18 @@
+<h2>Show license</h2>
+
+<ul>
+
+  <li>
+    <strong>License:</strong>
+    <%= @license.license_id %>
+  </li>
+
+  <li>
+    <strong>License:</strong>
+    <%= @license.license %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: license_path(@conn, :edit, @license) %>
+<%= link "Back", to: license_path(@conn, :index) %>

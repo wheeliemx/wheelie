@@ -1,0 +1,18 @@
+<h2>Show country</h2>
+
+<ul>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @country.country_id %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @country.country %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: country_path(@conn, :edit, @country) %>
+<%= link "Back", to: country_path(@conn, :index) %>

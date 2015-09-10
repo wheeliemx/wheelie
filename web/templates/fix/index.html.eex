@@ -1,0 +1,36 @@
+<h2>Listing fixes</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Fix</th>
+      <th>Fix</th>
+      <th>Service</th>
+      <th>Mechanic</th>
+      <th>Car</th>
+      <th>User</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for fix <- @fixes do %>
+    <tr>
+      <td><%= fix.fix_id %></td>
+      <td><%= fix.fix %></td>
+      <td><%= fix.service_id %></td>
+      <td><%= fix.mechanic_id %></td>
+      <td><%= fix.car_id %></td>
+      <td><%= fix.user_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: fix_path(@conn, :show, fix), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: fix_path(@conn, :edit, fix), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: fix_path(@conn, :delete, fix), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New fix", to: fix_path(@conn, :new) %>

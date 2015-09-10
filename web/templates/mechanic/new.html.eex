@@ -1,0 +1,6 @@
+<h2>New mechanic</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: mechanic_path(@conn, :create) %>
+
+<%= link "Back", to: mechanic_path(@conn, :index) %>

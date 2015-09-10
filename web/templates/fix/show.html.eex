@@ -1,0 +1,38 @@
+<h2>Show fix</h2>
+
+<ul>
+
+  <li>
+    <strong>Fix:</strong>
+    <%= @fix.fix_id %>
+  </li>
+
+  <li>
+    <strong>Fix:</strong>
+    <%= @fix.fix %>
+  </li>
+
+  <li>
+    <strong>Service:</strong>
+    <%= @fix.service_id %>
+  </li>
+
+  <li>
+    <strong>Mechanic:</strong>
+    <%= @fix.mechanic_id %>
+  </li>
+
+  <li>
+    <strong>Car:</strong>
+    <%= @fix.car_id %>
+  </li>
+
+  <li>
+    <strong>User:</strong>
+    <%= @fix.user_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: fix_path(@conn, :edit, @fix) %>
+<%= link "Back", to: fix_path(@conn, :index) %>

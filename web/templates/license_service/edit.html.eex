@@ -1,0 +1,6 @@
+<h2>Edit license service</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: license_service_path(@conn, :update, @license_service) %>
+
+<%= link "Back", to: license_service_path(@conn, :index) %>

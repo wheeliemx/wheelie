@@ -1,0 +1,30 @@
+<h2>Listing license services</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>License service</th>
+      <th>Service</th>
+      <th>License</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for license_service <- @license_services do %>
+    <tr>
+      <td><%= license_service.license_service_id %></td>
+      <td><%= license_service.service_id %></td>
+      <td><%= license_service.license_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: license_service_path(@conn, :show, license_service), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: license_service_path(@conn, :edit, license_service), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: license_service_path(@conn, :delete, license_service), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New license service", to: license_service_path(@conn, :new) %>

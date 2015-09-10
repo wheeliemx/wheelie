@@ -1,0 +1,34 @@
+<h2>Listing mechanics</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Mechanic</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>License</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for mechanic <- @mechanics do %>
+    <tr>
+      <td><%= mechanic.mechanic_id %></td>
+      <td><%= mechanic.first_name %></td>
+      <td><%= mechanic.last_name %></td>
+      <td><%= mechanic.email %></td>
+      <td><%= mechanic.license_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: mechanic_path(@conn, :show, mechanic), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: mechanic_path(@conn, :edit, mechanic), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: mechanic_path(@conn, :delete, mechanic), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New mechanic", to: mechanic_path(@conn, :new) %>

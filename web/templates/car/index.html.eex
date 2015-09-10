@@ -1,0 +1,40 @@
+<h2>Listing cars</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Car</th>
+      <th>Year</th>
+      <th>Alternative brand name</th>
+      <th>Alternative model name</th>
+      <th>Description</th>
+      <th>User</th>
+      <th>Model</th>
+      <th>Brand</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for car <- @cars do %>
+    <tr>
+      <td><%= car.car_id %></td>
+      <td><%= car.year %></td>
+      <td><%= car.alternative_brand_name %></td>
+      <td><%= car.alternative_model_name %></td>
+      <td><%= car.description %></td>
+      <td><%= car.user_id %></td>
+      <td><%= car.model_id %></td>
+      <td><%= car.brand_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: car_path(@conn, :show, car), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: car_path(@conn, :edit, car), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: car_path(@conn, :delete, car), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New car", to: car_path(@conn, :new) %>

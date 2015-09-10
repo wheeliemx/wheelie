@@ -1,0 +1,66 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :legal_address_id, "Legal address", class: "control-label" %>
+    <%= number_input f, :legal_address_id, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :street, "Street", class: "control-label" %>
+    <%= text_input f, :street, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :external_number, "External number", class: "control-label" %>
+    <%= text_input f, :external_number, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :internal_number, "Internal number", class: "control-label" %>
+    <%= text_input f, :internal_number, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :neighborhood, "Neighborhood", class: "control-label" %>
+    <%= text_input f, :neighborhood, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :locality, "Locality", class: "control-label" %>
+    <%= text_input f, :locality, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :zip_code, "Zip code", class: "control-label" %>
+    <%= text_input f, :zip_code, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :city_id, "City", class: "control-label" %>
+    <%= number_input f, :city_id, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :state_id, "State", class: "control-label" %>
+    <%= number_input f, :state_id, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :country_id, "Country", class: "control-label" %>
+    <%= number_input f, :country_id, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
